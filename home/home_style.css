@@ -1,0 +1,540 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #0f0f0f;
+}
+
+/* compoment */
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+/* slider */
+#slider {
+    width: 100%;
+    height: 840px;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 50px;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .1;
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1
+    }
+}
+
+.fade_in {
+    -webkit-animation-name: fade_in;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade_in;
+    animation: 1;
+}
+
+@keyframes fade_in {
+    from {
+        opacity: .1;
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+.slide_item {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: 0.6;
+    height: 100%;
+    display: none;
+}
+
+.slide_item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slide_container {
+    padding: 128px 0;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.slide_container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
+    height: 100px;
+}
+
+.content {
+    width: 55%;
+    padding-right: 50px;
+    padding-top: 100px;
+    margin-left: 80px;
+}
+
+.name_film, .introduce, .btns, .poster {
+    animation: fade_in ease 0.6s;
+    transition-delay: 1s, 1s;
+}
+
+.name_film {
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.introduce {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.btns {
+    margin-top: 20px;
+    display: flex;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn_watch_now {
+    background-color: #E50913;
+    margin-right: 20px;
+    padding: 15px 40px;
+    box-shadow: 0 0 3px 5px #ff00004d ;
+}
+
+.btn_watch_now:hover {
+    box-shadow: 0 0 9px 10px #ff00004d;
+}
+
+.btn_watch_trailer {
+    background: none;
+    border: 3px solid #fff;
+}
+
+.btn_watch_trailer:hover {
+    color: #E50913;
+    background-color: #fff;
+}
+
+.poster {
+    width: 40%;
+    --fad_in_from: -100px;
+    margin-right: 50px;
+
+}
+
+.poster_img {
+    width: 400px;
+    border-radius: 30px;
+}
+
+
+/* Modal*/
+
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 11;
+    display: none;
+}
+
+.modal_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.modal_content {
+    position: relative;
+    background-color: #0f0f0f;
+    width: 750px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+
+}
+
+.modal_iframe {
+    width: 700px;
+    height: 450px;
+}
+
+.close_modal {
+    position: absolute;
+    background-color: #E50913;
+    top: -10px;
+    right: -10px;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 3px 4px #ff00004d;
+}
+
+.close_modal:hover {
+    box-shadow: 0px 0px 7px 8px #ff00004d;
+    ;
+}
+
+/* Container */
+.section {
+    width: 100%;
+    margin-bottom: 80px;
+    padding: 0 20px;
+}
+
+.section_heading {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section_heading h2 {
+    font-size: 24px;
+    font-family: 600;
+}
+
+.section_heading .btn {
+    background: none;
+    border: 2px solid #fff;
+    font-size: 16px;
+    padding: 5px 15px;
+}
+
+.section_heading .btn:hover {
+    background: #fff;
+    color: #E50913;
+}
+
+/* .movies_list {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10px;
+} */
+
+.movie {
+    cursor: pointer;
+    width: 100%;
+}
+
+.movie:hover,
+.movie h2:hover {
+    color: #E50913;
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.movie h3 {
+    font-size: 18.72px;
+    margin-top: 10px;
+}
+
+.movie::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    border-radius: 30px;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev:hover,
+.next:hover {
+    color: #E50913;
+    transition: linear 0.3s;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.owl-dots {
+    display: none;
+}
+
+/* Tablets*/
+@media only screen and (min-width: 37.5625em) and (max-width: 64em) {
+    #slider {
+        height: 50vh;
+    }
+
+    .poster {
+        display: none;
+    }
+
+    .content {
+        width: 80%;
+        padding: 0;
+        margin: 0;
+    }
+
+
+
+    .name_film {
+        font-size: 35px;
+    }
+
+    .introduce {
+        font-size: 12.8px;
+    }
+
+    .btns {
+        align-items: center;
+        width: 340px;
+        margin: 20px auto 0;
+    }
+
+    .slide_container::after {
+        content: "";
+        height: 60px;
+    }
+
+    .btn {
+        font-size: 18px;
+    }
+
+    .btn_watch_now {
+        padding: 12px 26px;
+    }
+
+    .btn_watch_trailer {
+        border: 2px solid #fff;
+    }
+
+    .modal_container {
+        transform: translateY(-50px);
+    }
+
+    .modal_content {
+        width: 550px;
+        height: 400px;
+    }
+
+    .modal_iframe {
+        width: 510px;
+        height: 350px;
+    }
+
+    /*Container*/
+
+    .section_heading h2 {
+        font-size: 24px;
+        font-family: 600;
+    }
+
+    .section_heading .btn {
+        font-size: 16px;
+    }
+
+
+    .movie img {
+        border-radius: 15px;
+    }
+
+    .movie h3 {
+        font-size: 16px;
+    }
+
+    .movie::before {
+        content: "";
+        border-radius: 15px;
+    }
+
+}
+
+/* Mobile*/
+@media only screen and (max-width: 37.5em) {
+    #slider {
+        height: 50vh;
+    }
+
+    .poster {
+        display: none;
+    }
+
+    .content {
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 40px 0 0 0;
+    }
+
+    .name_film {
+        font-size: 24px;
+    }
+
+    .introduce {
+        font-size: 9.6px;
+    }
+
+    .btns {
+        align-items: center;
+        margin: 20px auto 0;
+        width: 300px;
+    }
+
+    .btn {
+        font-size: 14.4px;
+    }
+
+    .btn_watch_now {
+        padding: 6px 10px;
+    }
+
+    .btn_watch_trailer {
+        border: 2px solid #fff;
+        padding: 3px 10px;
+    }
+
+    .slide_container {
+        padding: 48px 0;
+    }
+
+    .slide_container::after {
+        content: "";
+        height: 50px;
+    }
+
+    .modal_container {
+        transform: translateY(-50px);
+    }
+
+    .modal_content {
+        width: 90%;
+        height: 300px;
+    }
+
+    .modal_iframe {
+        width: 90%;
+        height: 240px;
+    }
+
+    /*Container*/
+    .section {
+        margin-bottom: 40px;
+    }
+
+    .section_heading {
+        margin-bottom: 15px;
+    }
+
+    .section_heading h2 {
+        font-size: 14.5px;
+        font-family: 400;
+    }
+
+    .section_heading .btn {
+        font-size: 9.4px;
+    }
+
+    .movie img {
+        border-radius: 15px;
+    }
+
+    .movie h3 {
+        font-size: 14px;
+        margin: 12px 0 0 10px;
+    }
+
+    .movie::before {
+        content: "";
+        border-radius: 15px;
+    }
+
+    .prev,
+    .next{
+        font-size: 20px;
+    }
+}

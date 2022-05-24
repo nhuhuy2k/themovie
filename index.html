@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhimHay.com</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./library/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./library/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./home/home_style.css" />
+    <link rel="stylesheet" href="./header/header_style.css" />
+    <link rel="stylesheet" href="./footer/footer_style.css" />
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="header__page"></div>
+        <div id="slider" class=""></div>
+        <div class="container" style="margin-bottom: 100px">
+            <div class="section">
+                <div class="section_heading">
+                    <h2>Trending Movies</h2>
+                    <a href="./movie_page/movie_page.html?category=movie"><button class="btn">View more</button></a>
+                </div>
+                <div class="movies_list owl-carousel" id="trending_movie"></div>
+            </div>
+            <div class="section">
+                <div class="section_heading">
+                    <h2>Top Rate Movies</h2>
+                    <a href="./movie_page/movie_page.html?category=movie"><button class="btn">View more</button></a>
+                </div>
+                <div class="movies_list owl-carousel" id="top_rate_movies">
+                </div>
+            </div>
+            <div class="section">
+                <div class="section_heading">
+                    <h2>Trending Tv</h2>
+                    <a href="./movie_page/movie_page.html?category=tv"><button class="btn">View more</button></a>
+                </div>
+                <div class="movies_list owl-carousel" id="trending_tv">
+                </div>
+            </div>
+            <div class="section">
+                <div class="section_heading">
+                    <h2>Top Rate Tv</h2>
+                    <a href="./movie_page/movie_page.html?category=tv"><button class="btn">View more</button></a>
+                </div>
+                <div class="movies_list owl-carousel" id="top_rate_tv">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer__page"></div>
+
+    <div id="modal">
+        <div class="modal_container">
+            <div class="modal_content">
+                <button class="close_modal" id="close_modal_trailer">X</button>
+                <iframe class="modal_iframe" id="iframe_trailer" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="./library/js/owl.carousel.min.js"></script>
+    <script src="./header/header.js"></script>
+    <script type="module" src="./home/home.js"></script>
+    <script>
+       
+    </script>
+</body>
+
+</html>

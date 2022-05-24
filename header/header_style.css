@@ -1,0 +1,128 @@
+
+
+#header a {
+    text-decoration: none;
+    color: #fff;
+}
+#header ul {
+    list-style-type: none;
+}
+
+#header {
+    display: flex;
+    height: 128px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0 30px;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.5s;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-weight: 400;
+    
+}
+
+.shink {
+    background-color: #0f0f0f;
+    height: 80px !important;
+    transition: 0.5s;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+
+#header .logo:hover {
+    color: #E50913;
+}
+
+.logo_text {
+    font-size: 30px;
+    display: block;
+    margin-left: 8px;
+    font-style: italic;
+    font-weight: 700;
+    border-bottom: 3px solid #E50913;
+}
+
+.logo_img {
+    width: 80px;
+}
+
+.nav_menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav_item {
+    font-size: 22px;
+    font-weight: 600;
+    position: relative;
+    margin-right: 20px;
+}
+
+.nav_item:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    background-color: #E50913;
+    height: 3px;
+    width: 0;
+    right: 50%;
+    transform: translateX(50%);
+    transition: width ease 0.5s ;
+}
+
+.nav_menu li.active:after, .nav_menu li:hover:after {
+    width: 100%;
+}
+
+/*Tablet*/
+@media only screen and (min-width: 41.25em) and (max-width: 64em) {
+
+
+}
+/*MObile*/
+@media only screen and (max-width: 41.2em) {
+    #header {
+        justify-content: center;
+        height: 90px;
+    }
+
+    .shink {
+        height: 48px !important;
+    }
+    .logo_img {
+        width: 50px;
+    }
+
+    .logo_text {
+        font-size: 28.5px;
+        font-size: 19px;
+    }
+
+    .nav_menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #0f0f0f;
+        height: 44px;
+        padding: 8px 0;
+        justify-content: space-around;
+        margin: 0;
+    }
+
+    .nav_item {
+        font-size: 18px;
+        margin: 0;
+    }
+}
